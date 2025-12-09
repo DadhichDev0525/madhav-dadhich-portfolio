@@ -86,7 +86,7 @@ export default function ExperiencePage() {
                     initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, amount: 0 }}
                     className={`relative grid md:grid-cols-2 gap-8 md:gap-16 ${
                       isEven ? "" : "md:direction-rtl"
                     }`}
@@ -101,7 +101,7 @@ export default function ExperiencePage() {
                           stiffness: 200,
                           delay: index * 0.1,
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0 }}
                         className={`w-4 h-4 rounded-full ${colors.bg} border-2 ${colors.border} ${colors.glow}`}
                       >
                         {exp.status === "current" && (
@@ -120,7 +120,7 @@ export default function ExperiencePage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0 }}
                         className={`p-6 rounded-2xl border ${colors.border} bg-slate-900/50 backdrop-blur-sm hover:${colors.glow} transition-all duration-500 group`}
                       >
                         {/* Status badge */}

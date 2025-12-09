@@ -65,9 +65,8 @@ export default function ProjectsPage() {
               {/* Large Featured Card */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 className="lg:col-span-2 lg:row-span-2 group"
               >
                 <div
@@ -163,9 +162,8 @@ export default function ProjectsPage() {
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + (index + 1) * 0.1 }}
                   className="group"
                 >
                   <div
@@ -244,6 +242,7 @@ export default function ProjectsPage() {
             <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0 }}
               className="text-2xl font-bold text-white mb-8 flex items-center gap-3"
             >
               <Layers className="w-6 h-6 text-teal-400" />
@@ -257,7 +256,7 @@ export default function ProjectsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0 }}
                   whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}
                   style={{ transformStyle: "preserve-3d" }}
                   className="group"
@@ -338,7 +337,7 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0 }}
           className="max-w-4xl mx-auto text-center"
         >
           <div className="relative p-12 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 via-transparent to-teal-500/10 overflow-hidden">

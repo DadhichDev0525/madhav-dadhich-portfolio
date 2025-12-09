@@ -150,9 +150,8 @@ export default function ProjectDetailPage() {
             {/* Overview */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
@@ -170,9 +169,8 @@ export default function ProjectDetailPage() {
             {/* Problem */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
@@ -194,7 +192,7 @@ export default function ProjectDetailPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
@@ -213,7 +211,7 @@ export default function ProjectDetailPage() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0 }}
                     className="flex items-start gap-4"
                   >
                     <CheckCircle
@@ -230,7 +228,7 @@ export default function ProjectDetailPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div
@@ -249,7 +247,7 @@ export default function ProjectDetailPage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0 }}
                     className={`p-4 rounded-xl border ${colors.border} bg-[#0f0f1a]/80`}
                   >
                     <span className="text-gray-300">{item}</span>
@@ -263,7 +261,7 @@ export default function ProjectDetailPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <h2 className="text-3xl font-bold text-white mb-6">
                 Challenges & Learnings
@@ -275,7 +273,7 @@ export default function ProjectDetailPage() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0 }}
                     className={`p-5 rounded-xl border ${colors.border} bg-gradient-to-r ${colors.bg}`}
                   >
                     <span className="text-gray-300">{item}</span>
@@ -290,7 +288,7 @@ export default function ProjectDetailPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             className="mt-20 pt-10 border-t border-gray-800"
           >
             <Link
