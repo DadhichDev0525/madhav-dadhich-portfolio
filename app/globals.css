@@ -28,6 +28,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -35,6 +36,7 @@
     color: var(--text-primary);
     font-family: "Inter", system-ui, sans-serif;
     overflow-x: hidden;
+    max-width: 100vw;
   }
 
   h1,

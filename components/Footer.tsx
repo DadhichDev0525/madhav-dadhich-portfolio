@@ -58,7 +58,7 @@ export function Footer() {
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
@@ -163,7 +163,7 @@ export function Footer() {
             <span className="text-purple-400">Madhav Dadhich</span>. All rights
             reserved.
           </p>
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 max-md:hidden">
             <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
             Crafted with React, Next.js & Tailwind CSS
           </p>

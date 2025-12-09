@@ -84,21 +84,21 @@ function GhostButton({
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       {/* ========================================
           HERO SECTION - Unique Two Column Layout
           ======================================== */}
       <section
         id="hero"
-        className="relative min-h-[90vh] flex items-center overflow-hidden py-20 lg:py-28"
+        className="relative min-h-[90vh] flex items-center overflow-hidden py-20 lg:py-28 mt-5"
       >
         {/* Background layers */}
         {/* <div className="absolute inset-0 bg-[#020617]" /> */}
 
         {/* Purple/Teal radial gradient blobs */}
-        <div className="absolute top-0 left-1/12 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/12 w-[400px] h-[400px] bg-teal-500/15 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-sky-500/10 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 -left-32 sm:left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 -right-32 sm:right-0 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-teal-500/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 -right-20 sm:right-0 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-sky-500/10 rounded-full blur-[80px] pointer-events-none" />
 
         {/* Subtle matrix/code overlay */}
         <div

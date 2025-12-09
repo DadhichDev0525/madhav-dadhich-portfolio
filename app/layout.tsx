@@ -36,18 +36,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <body
-        className={`${inter.className} antialiased bg-[#0a0a0f] text-white`}
+        className={`${inter.className} antialiased bg-[#0a0a0f] text-white overflow-x-hidden`}
       >
         {/* Background Effects */}
-        <div className="gradient-wave-bg" />
+        <div className="gradient-wave-bg " />
         <MatrixRain />
         <ParticleField />
-        <div className="grid-pattern fixed inset-0 pointer-events-none z-0" />
+        <div className="grid-pattern fixed inset-0 pointer-events-none z-0 " />
 
         {/* Main Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 ">
           <Navigation />
           <main className="min-h-screen">{children}</main>
           <Footer />
