@@ -162,7 +162,7 @@ export const projectsData: Record<string, ProjectDetail> = {
       "React Query for efficient server state management",
       "Tailwind CSS for rapid, consistent styling",
       "NestJS backend integration for timing services",
-      "MongoDB for flexible data storage",
+      "PostgreSQL for flexible data storage",
     ],
     challenges: [
       "Handling complex timer state across sections with accurate synchronization",
