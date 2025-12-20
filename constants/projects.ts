@@ -48,7 +48,7 @@ export const projects: Project[] = [
     ],
     color: "purple",
     featured: true,
-    liveUrl: "https://stage.sarkaribuddy.in/",
+    liveUrl: "https://sarkaribuddy.in/",
   },
   {
     id: "willow-referrals",
@@ -144,18 +144,18 @@ export const projectsData: Record<string, ProjectDetail> = {
     role: "Core Frontend Developer",
     duration: "October 2025 – Present",
     overview:
-      "Sarkari Buddy is a comprehensive government exam preparation platform designed to provide students with realistic mock test experiences. The platform handles sectional timing, question navigation, performance analytics, multilingual tests, and subscription management.",
+      "Sarkari Buddy is a production-grade government exam preparation platform focused on simulating real exam conditions. The platform includes timed mock tests, section-based navigation, performance analytics, multilingual support, and subscription-based access for students.",
     problem:
       "Government exam aspirants needed a platform that could simulate real exam conditions with accurate timing, question tracking, and analytics. Existing solutions lacked the sophistication needed for serious preparation.",
     responsibilities: [
-      "Built the complete test-taking UI/UX with real exam-like interface",
-      "Implemented sectional timing logic with accurate countdown and auto-submission",
-      "Created mobile-first navigation patterns for question selection",
-      "Designed and built the instruction system with multilingual support",
-      "Implemented SEO metadata utilities using Next.js Metadata API",
-      "Built admin dashboards for coupons and transactions with search, filters, and pagination",
-      "Contributed backend timing updates in NestJS services",
-    ],
+  "Built the complete test-taking interface with real exam-like layout and navigation",
+  "Implemented section-wise timing logic with countdown, auto-complete, and resume handling",
+  "Designed mobile-first question navigation for smooth usage on smaller devices",
+  "Built instruction and rules flow with English/Hindi support before test start",
+  "Implemented SEO metadata utilities using Next.js Metadata API",
+  "Developed admin dashboards for coupon and transaction management with filtering and pagination",
+  "Assisted in backend service updates related to timing logic using NestJS"
+],
     technical: [
       "React & Next.js for performant, SEO-friendly frontend",
       "TypeScript for type-safe development across the codebase",
@@ -165,11 +165,11 @@ export const projectsData: Record<string, ProjectDetail> = {
       "PostgreSQL for flexible data storage",
     ],
     challenges: [
-      "Handling complex timer state across sections with accurate synchronization",
-      "Building accessible question navigation for mobile devices",
-      "Implementing real-time updates without impacting performance",
-      "Creating a scalable admin dashboard with complex filtering logic",
-    ],
+  "Managing timer state accurately across multiple test sections",
+  "Ensuring smooth test experience on low-end mobile devices",
+  "Keeping UI responsive while handling frequent state updates",
+  "Designing admin dashboards that remain usable with growing data"
+],
     tags: [
       "React",
       "Next.js",
@@ -180,7 +180,7 @@ export const projectsData: Record<string, ProjectDetail> = {
       "Tailwind CSS",
     ],
     color: "purple",
-    liveUrl: "https://stage.sarkaribuddy.in/",
+    liveUrl: "https://sarkaribuddy.in/",
   },
   "willow-referrals": {
     title: "Willow Referrals",
@@ -190,17 +190,17 @@ export const projectsData: Record<string, ProjectDetail> = {
     role: "Frontend Developer (Intern + Contract)",
     duration: "April 2025 – June 2025 (Intern), November 2025 (Contract)",
     overview:
-      "Willow Referrals is a SaaS platform that enables businesses to create and manage referral campaigns. It supports multiple user roles including business owners, promoters, and administrators, each with tailored dashboards and workflows.",
+      "Willow Referrals is a SaaS referral marketing platform that allows businesses to create referral campaigns and promoters to track and manage their performance through role-based dashboards.",
     problem:
       "Businesses needed a flexible referral system that could handle complex campaign rules, multiple user types, and integrate with payment processors for commission payouts.",
     responsibilities: [
-      "Built role-based dashboards for different user types",
-      "Developed dynamic campaign editors with real-time preview",
-      "Implemented complex form validation using React Hook Form",
-      "Integrated Google OAuth authentication flows",
-      "Built Stripe billing and payment UI components",
-      "Enhanced promoter workflows during contract phase",
-    ],
+  "Built role-based dashboards for business owners and promoters",
+  "Developed dynamic campaign creation forms with real-time validation",
+  "Handled complex form logic using React Hook Form",
+  "Integrated Google OAuth for authentication flows",
+  "Implemented Stripe billing UI and subscription-related screens",
+  "Improved promoter onboarding and workflow during contract phase"
+],
     technical: [
       "React with TypeScript for component development",
       "React Hook Form for complex form management",
@@ -210,11 +210,10 @@ export const projectsData: Record<string, ProjectDetail> = {
       "Tailwind CSS for responsive styling",
     ],
     challenges: [
-      "Managing complex form state with nested validation rules",
-      "Implementing secure OAuth flows with proper token handling",
-      "Building responsive dashboards that work across all device sizes",
-      "Integrating Stripe with proper error handling and loading states",
-    ],
+  "Managing complex form validation with nested campaign rules",
+  "Handling authentication and billing edge cases gracefully",
+  "Maintaining clean UI across multiple user roles"
+],
     tags: [
       "React",
       "React Hook Form",
@@ -234,17 +233,16 @@ export const projectsData: Record<string, ProjectDetail> = {
     role: "Frontend Developer",
     duration: "June 2025 – September 2025",
     overview:
-      "adTask is an AI-powered advertising platform that helps businesses create and manage ad campaigns with the assistance of an intelligent chatbot. The platform features real-time AI responses and comprehensive campaign management tools.",
+      "adTask is an AI-powered advertising management platform that helps users create and manage ad campaigns with assistance from a real-time AI chatbot interface.",
     problem:
       "Advertisers needed an intuitive way to create campaigns with AI assistance, requiring real-time streaming responses and a modern, responsive interface.",
     responsibilities: [
-      "Implemented campaign creation UI and management flows",
-      "Built real-time AI chat interface using WebSockets",
-      "Developed streaming response handling for smooth UX",
-      "Created SEO-friendly blog pages for content marketing",
-      "Improved API state handling with React Query",
-      "Enhanced overall application performance",
-    ],
+  "Built campaign creation and management UI flows",
+  "Implemented real-time AI chat interface using WebSocket streaming",
+  "Handled incremental streaming responses for smooth user experience",
+  "Built SEO-friendly blog pages using Next.js",
+  "Improved API data handling and caching with React Query"
+],
     technical: [
       "Next.js for server-side rendering and SEO",
       "WebSocket integration for real-time streaming",
@@ -253,11 +251,10 @@ export const projectsData: Record<string, ProjectDetail> = {
       "Framer Motion for smooth animations",
     ],
     challenges: [
-      "Implementing smooth streaming text animation for AI responses",
-      "Managing WebSocket connection state reliably",
-      "Optimizing render performance for real-time updates",
-      "Building SEO-optimized pages with dynamic content",
-    ],
+  "Managing WebSocket connection lifecycle reliably",
+  "Rendering streaming AI responses without performance issues",
+  "Balancing real-time updates with UI responsiveness"
+],
     tags: [
       "React Query",
       "WebSocket",
