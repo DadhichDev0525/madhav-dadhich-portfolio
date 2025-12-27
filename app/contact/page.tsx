@@ -37,15 +37,32 @@ export default function ContactPage() {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
-      setIsLoading(false);
+    try {
+      const response = await fetch("https://formspree.io/f/mgoekpgd", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert(
+        "Failed to send message. Please try again or use another contact method."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactMethods = [
@@ -73,14 +90,14 @@ export default function ContactPage() {
       color: "teal",
       description: "Check out my code",
     },
-    // {
-    //   icon: MessageCircle,
-    //   title: "WhatsApp",
-    //   value: "+91 8094774472",
-    //   href: "https://wa.me/918094774472?text=Hi%20Madhav!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.",
-    //   color: "green",
-    //   description: "Quick chat & queries",
-    // },
+    {
+      icon: MessageCircle,
+      title: "WhatsApp",
+      value: "+91 8094774472",
+      href: "https://wa.me/918094774472?text=Hi%20Madhav!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.",
+      color: "green",
+      description: "Quick chat & queries",
+    },
   ];
 
   const colorClasses: Record<
@@ -148,8 +165,8 @@ export default function ContactPage() {
 
       {/* Contact Methods */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-20">
             {contactMethods.map((method, index) => {
               const Icon = method.icon;
               const colors = colorClasses[method.color];
@@ -166,24 +183,38 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`group p-6 rounded-2xl border ${colors.border} bg-slate-900/50 backdrop-blur-sm hover:${colors.glow} transition-all duration-500`}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={`group relative p-5 md:p-6 rounded-2xl border ${colors.border} bg-slate-900/50 backdrop-blur-sm hover:${colors.glow} hover:border-opacity-100 transition-all duration-300`}
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div
-                      className={`p-3 rounded-xl ${colors.bg} group-hover:scale-110 transition-transform`}
-                    >
-                      <Icon className={`w-6 h-6 ${colors.text}`} />
-                    </div>
-                    <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-white transition-colors" />
-                  </div>
+                  {/* Gradient overlay on hover */}
+                  <div
+                    className={`absolute inset-0 rounded-2xl ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
+                  />
 
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">
-                    {method.title}
-                  </h3>
-                  <p className={`${colors.text} font-mono text-sm mb-2`}>
-                    {method.value}
-                  </p>
-                  <p className="text-slate-500 text-sm">{method.description}</p>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div
+                        className={`p-2.5 md:p-3 rounded-xl ${colors.bg} group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <Icon
+                          className={`w-5 h-5 md:w-6 md:h-6 ${colors.text}`}
+                        />
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-white transition-colors ml-auto" />
+                    </div>
+
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">
+                      {method.title}
+                    </h3>
+                    <p
+                      className={`${colors.text} font-mono text-xs md:text-sm mb-2 truncate`}
+                    >
+                      {method.value}
+                    </p>
+                    <p className="text-slate-500 text-xs md:text-sm">
+                      {method.description}
+                    </p>
+                  </div>
                 </motion.a>
               );
             })}
